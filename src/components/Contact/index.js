@@ -130,13 +130,17 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_tox7kqs', 'template_nv7k7mj', form.current, 'SybVGsYS52j2TfLbi')
-      .then((result) => {
-        setOpen(true);
-        form.current.reset();
-      }, (error) => {
-        console.log(error.text);
-      });
+    emailjs.sendForm('service_tib01rk', 'template_6hoxo0c', form.current, {
+      publicKey: 'eTXbRIJDcY62xNRv-',
+    })
+    .then(
+      () => {
+        console.log('SUCCESS!');
+      },
+      (error) => {
+        console.log('FAILED...', error.text);
+      },
+    );
   }
 
 
